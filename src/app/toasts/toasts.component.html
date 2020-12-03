@@ -1,0 +1,10 @@
+<div class="toast toast-{{toast.type}}" [style.top.px]="toast.top === 'top' ? (top + index * 100): (top - index * 100)" [style.left.px]="left" [style.animation]="toast.left === 'top' ? 'move-right 1s': 'move 1s'" >
+  <h4 class="toast-heading">{{toast.title}}</h4>
+  <p>{{toast.content}}</p>
+  <a class="close" (click)="delete.emit(index)">&times;</a>
+  <div class="toast__bottom" *ngIf="toast.displayDuration && toast.duration">
+    <mat-progress-bar mode="determinate" [value]="(toast.duration / initialDuration) * 100"></mat-progress-bar>
+  </div>
+</div>
+
+na udalenie che nuzhno? koroche tipa budet u menya toast na evenemitter, mne kak nibud' nado budet perepisat stili chtoby on obratno
